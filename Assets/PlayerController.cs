@@ -7,7 +7,8 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D rb;
     private Vector2 movementDirection;
-    float angle = 0;
+    Vector2 mousePosition;
+    [SerializeField] private Weapon weapon;
 
     [SerializeField] private float movementSpeed = 3f;
 
@@ -20,10 +21,12 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        movementDirection = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-        if (movementDirection != Vector2.zero)
+        movementDirection = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        if (Input.GetMouseButtonDown(0))
         {
-            angle = -Vector2.Angle(movementDirection, Vector2.up) * Mathf.Sign(movementDirection.x);
+            weapon.Fire();
         }
     }
 
@@ -31,6 +34,8 @@ public class PlayerController : MonoBehaviour
     {
         rb.velocity = movementDirection * movementSpeed;
 
-        rb.transform.rotation = Quaternion.Euler(0, 0, angle);
+        Vector2 aimDirection = mousePosition - rb.position;
+        float aimAngle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg - 90f;
+        rb.rotation = aimAngle;
     }
 }
