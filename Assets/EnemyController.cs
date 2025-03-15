@@ -10,13 +10,9 @@ public class EnemyController : MonoBehaviour
     Vector2 moveDirection;
 
     [SerializeField] private float health, maxHealth = 3f;
-
-    private void Awake()
-    {
-        rb = GetComponent<Rigidbody2D>();
-    }
     void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
         target = GameObject.FindGameObjectWithTag("Player").transform;
         health = maxHealth;
     }

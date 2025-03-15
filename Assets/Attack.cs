@@ -9,7 +9,7 @@ public class Attack : MonoBehaviour
     [SerializeField] private float fireForce = 20f;
     [SerializeField] private float shootTimer = 0.5f;
     [SerializeField] private float shootCooldown = 0.25f;
-    [SerializeField] private float time = 5f;
+    [SerializeField] private float time = 1f;
     void Update()
     {
         shootTimer += Time.deltaTime;

@@ -5,6 +5,8 @@ using UnityEngine;
 public class Weapon : MonoBehaviour
 {
     public float dmg = 1f;
+    public enum WeaponType { Melee, Ranged }
+    public WeaponType weaponType;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -14,12 +16,19 @@ public class Weapon : MonoBehaviour
         if (collision.gameObject.tag == "Enemy")
         {
             enemy.TakeDamage(dmg);
-            Destroy(gameObject);
+            if (weaponType == WeaponType.Ranged)
+            {
+                Destroy(gameObject);
+            }
         }
         if (collision.gameObject.tag == "Player")
         {
             player.TakeDamage(dmg);
-            Destroy(gameObject);
+            if (weaponType == WeaponType.Ranged)
+            {
+                Destroy(gameObject);
+            }
         }
+        Debug.Log(collision.gameObject.tag);
     }
 }
