@@ -4,16 +4,22 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    [SerializeField] private GameObject arrowPrefab;
-    [SerializeField] private Transform firePoint;
-    [SerializeField] private float fireForce = 20f;
-
     public float dmg = 1f;
 
-    public void Fire()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        GameObject arrow = Instantiate(arrowPrefab, firePoint.position, firePoint.rotation);
-        arrow.GetComponent<Rigidbody2D>().AddForce(firePoint.up * fireForce, ForceMode2D.Impulse);
+        EnemyController enemy = collision.GetComponent<EnemyController>();
+        PlayerController player = collision.GetComponent<PlayerController>();
 
+        if (collision.gameObject.tag == "Enemy")
+        {
+            enemy.TakeDamage(dmg);
+            Destroy(gameObject);
+        }
+        if (collision.gameObject.tag == "Player")
+        {
+            player.TakeDamage(dmg);
+            Destroy(gameObject);
+        }
     }
 }

@@ -10,7 +10,6 @@ public class EnemyController : MonoBehaviour
     Vector2 moveDirection;
 
     [SerializeField] private float health, maxHealth = 3f;
-    // Start is called before the first frame update
 
     private void Awake()
     {
@@ -27,7 +26,7 @@ public class EnemyController : MonoBehaviour
     {
         if (target)
         {
-            Vector3 direction = (target.position - transform.position).normalized;
+            Vector2 direction = (target.position - transform.position).normalized;
             moveDirection = direction;
 
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
@@ -37,6 +36,7 @@ public class EnemyController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        Attack attack = GetComponent<Attack>();
         if (target)
         {
             rb.velocity = new Vector2(moveDirection.x, moveDirection.y) * moveSpeed;
