@@ -12,7 +12,6 @@ public class Weapon : MonoBehaviour
     {
         EnemyController enemy = collision.GetComponent<EnemyController>();
         PlayerController player = collision.GetComponent<PlayerController>();
-
         if (collision.gameObject.tag == "Enemy")
         {
             enemy.TakeDamage(dmg);
@@ -29,6 +28,5 @@ public class Weapon : MonoBehaviour
                 Destroy(gameObject);
             }
         }
-        Debug.Log(collision.gameObject.tag);
     }
 }

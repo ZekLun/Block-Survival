@@ -146,7 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2da3b805803be9643b80d88b1bac70b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dmg: 5
+  dmg: 8
   weaponType: 0
 --- !u!1 &3025848010717895802
 GameObject:
@@ -190,7 +190,7 @@ GameObject:
   m_Component:
   - component: {fileID: 660516940737190996}
   - component: {fileID: 1152631295375533514}
-  - component: {fileID: 7206456284451199211}
+  - component: {fileID: -2042506928999189662}
   - component: {fileID: 4118724626888960884}
   - component: {fileID: 1231735430887756293}
   m_Layer: 0
@@ -229,10 +229,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e2f74ee57c5ec347a906702a5febafa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2
+  moveSpeed: 6
   health: 0
-  maxHealth: 5
---- !u!114 &7206456284451199211
+  maxHealth: 10
+--- !u!114 &-2042506928999189662
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -241,15 +241,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 3232145724025373560}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 896be6bd1804ede4a981080828f04a3a, type: 3}
+  m_Script: {fileID: 11500000, guid: 13db15bf1712ad24c88b5a5dd5a8b56f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  arrowPrefab: {fileID: 4618627241845557555, guid: 15fe49a38e9a41c4f88ee1d006b5543e, type: 3}
-  firePoint: {fileID: 6294271526992811523}
-  fireForce: 10
-  shootTimer: 0.5
-  shootCooldown: 1
-  time: 2
   weaponType: 0
   Melee: {fileID: 1091453933585571704}
   atkDuration: 0.5

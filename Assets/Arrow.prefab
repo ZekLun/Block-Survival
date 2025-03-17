@@ -171,5 +171,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2da3b805803be9643b80d88b1bac70b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dmg: 1
-  weaponType: 0
+  dmg: 10
+  weaponType: 1

@@ -229,7 +229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e2f74ee57c5ec347a906702a5febafa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2
+  moveSpeed: 3
   health: 0
   maxHealth: 5
 --- !u!114 &7206456284451199211
@@ -250,9 +250,6 @@ MonoBehaviour:
   shootTimer: 0.5
   shootCooldown: 1
   time: 2
-  weaponType: 1
-  Melee: {fileID: 1091453933585571704}
-  atkDuration: 0.5
 --- !u!50 &4118724626888960884
 Rigidbody2D:
   serializedVersion: 4
