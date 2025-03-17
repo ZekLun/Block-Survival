@@ -173,3 +173,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dmg: 1
   weaponType: 1
+  weaponOwner: {fileID: 0}

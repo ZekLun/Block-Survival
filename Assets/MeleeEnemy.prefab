@@ -148,6 +148,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dmg: 8
   weaponType: 0
+  weaponOwner: {fileID: 3232145724025373560}
 --- !u!1 &3025848010717895802
 GameObject:
   m_ObjectHideFlags: 0

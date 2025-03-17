@@ -173,3 +173,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dmg: 10
   weaponType: 1
+  weaponOwner: {fileID: 3232145724025373560, guid: adb14980c7075a441bc787effb6f5f92, type: 3}
