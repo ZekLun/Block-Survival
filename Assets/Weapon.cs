@@ -8,21 +8,23 @@ public class Weapon : MonoBehaviour
     public enum WeaponType { Melee, Ranged }
     public WeaponType weaponType;
 
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         EnemyController enemy = collision.GetComponent<EnemyController>();
         PlayerController player = collision.GetComponent<PlayerController>();
-        if (collision.gameObject.tag == "Enemy")
+
+        if (collision.gameObject.CompareTag("Player"))
         {
-            enemy.TakeDamage(dmg);
+            player.TakeDamage(dmg);
             if (weaponType == WeaponType.Ranged)
             {
                 Destroy(gameObject);
             }
         }
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.CompareTag("Enemy"))
         {
-            player.TakeDamage(dmg);
+            enemy.TakeDamage(dmg);
             if (weaponType == WeaponType.Ranged)
             {
                 Destroy(gameObject);

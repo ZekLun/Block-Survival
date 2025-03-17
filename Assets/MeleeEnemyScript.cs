@@ -9,13 +9,11 @@ public class MeleeEnemyAttack : MonoBehaviour
     [SerializeField] private GameObject Melee;
     [SerializeField] private float atkDuration = 0.5f;
     float atkCooldown;
-    bool isAttacking;
 
     void Update()
     {
         AttackCooldown();
         Melee.SetActive(true);
-        isAttacking = true;
     }
 
     public void AttackCooldown()
@@ -24,7 +22,6 @@ public class MeleeEnemyAttack : MonoBehaviour
         if (atkCooldown >= atkDuration)
         {
             atkCooldown = 0;
-            isAttacking = false;
             Melee.SetActive(false);
         }
 
