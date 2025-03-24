@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     public GameObject[] EnemyPrefabs;
-    public float spawnRate = 1f;
+    public float spawnRate = 10;
     private bool isSpawning = true;
 
     // Start is called before the first frame update
@@ -16,15 +16,20 @@ public class EnemySpawner : MonoBehaviour
 
     private IEnumerator Spawner()
     {
-        WaitForSeconds wait = new(spawnRate);
-
         while (isSpawning)
         {
-            yield return wait;
-            int rand = Random.Range(0, EnemyPrefabs.Length);
-            GameObject enemyToSpawn = EnemyPrefabs[rand];
+            float randomSpawn = Random.Range(1, 15);
+            yield return new WaitForSeconds(spawnRate + randomSpawn);
 
-            Instantiate(enemyToSpawn, transform.position, Quaternion.identity);
+            SpawnEnemy();
         }
+    }
+
+    private void SpawnEnemy()
+    {
+        int randomEnemy = Random.Range(0, EnemyPrefabs.Length);
+        GameObject enemyToSpawn = EnemyPrefabs[randomEnemy];
+
+        Instantiate(enemyToSpawn, transform.position, Quaternion.identity);
     }
 }

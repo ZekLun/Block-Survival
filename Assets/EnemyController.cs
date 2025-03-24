@@ -32,7 +32,6 @@ public class EnemyController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Attack attack = GetComponent<Attack>();
         if (target)
         {
             rb.velocity = new Vector2(moveDirection.x, moveDirection.y) * moveSpeed;

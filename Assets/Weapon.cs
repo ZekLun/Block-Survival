@@ -27,7 +27,7 @@ public class Weapon : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            if (weaponOwner != null && weaponOwner.CompareTag("Enemy"))
+            if (weaponOwner != null && weaponOwner.CompareTag(weaponOwner.tag))
             {
                 return;
             }
