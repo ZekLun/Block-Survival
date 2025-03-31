@@ -5,8 +5,8 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     public GameObject[] EnemyPrefabs;
-    public float spawnRate = 10;
-    private bool isSpawning = true;
+    public float spawnRate = 8;
+    private readonly bool isSpawning = true;
 
     // Start is called before the first frame update
     void Start()

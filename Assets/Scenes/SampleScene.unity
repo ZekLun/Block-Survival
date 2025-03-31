@@ -220,6 +220,7 @@ GameObject:
   - component: {fileID: 1298051817}
   - component: {fileID: 1298051816}
   - component: {fileID: 1298051815}
+  - component: {fileID: 1298051818}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -353,6 +354,18 @@ MonoBehaviour:
   shootTimer: 0.5
   shootCooldown: 0.25
   time: 2
+--- !u!114 &1298051818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1298051811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc0a52087192e4c41832b598f1f7c144, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1392285081
 GameObject:
   m_ObjectHideFlags: 0
@@ -849,7 +862,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1298051814}
-  distance: 1
+  distance: 10
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

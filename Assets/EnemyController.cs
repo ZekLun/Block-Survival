@@ -8,6 +8,7 @@ public class EnemyController : MonoBehaviour
     Rigidbody2D rb;
     Transform target;
     Vector2 moveDirection;
+    public float CoinsGiven;
 
     [SerializeField] private float health, maxHealth = 3f;
     void Start()
@@ -43,6 +44,7 @@ public class EnemyController : MonoBehaviour
         health -= damage;
         if (health <= 0)
         {
+            CoinScript.Coins += CoinsGiven;
             Destroy(gameObject);
         }
     }

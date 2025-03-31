@@ -81,6 +81,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 3
+  CoinsGiven: 1
   health: 0
   maxHealth: 2
 --- !u!114 &7206456284451199211
