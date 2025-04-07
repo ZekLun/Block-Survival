@@ -2,13 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Reflection.Emit;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class CoinScript : MonoBehaviour
+public class UIScript : MonoBehaviour
 {
     static public float Coins = 0f;
+    public Text CoinText;
 
-    private void OnGUI()
+    private void Update()
     {
-        GUI.Label(new Rect(80, 20, 10, 10), Coins.ToString());
+        CoinText.text = Coins.ToString();
     }
+
 }

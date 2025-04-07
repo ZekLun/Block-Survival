@@ -44,7 +44,7 @@ public class EnemyController : MonoBehaviour
         health -= damage;
         if (health <= 0)
         {
-            CoinScript.Coins += CoinsGiven;
+            UIScript.Coins += CoinsGiven;
             Destroy(gameObject);
         }
     }
