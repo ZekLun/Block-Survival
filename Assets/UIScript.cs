@@ -9,6 +9,11 @@ public class UIScript : MonoBehaviour
     static public float Coins = 0f;
     public Text CoinText;
 
+    private void Start()
+    {
+
+    }
+
     private void Update()
     {
         CoinText.text = Coins.ToString();

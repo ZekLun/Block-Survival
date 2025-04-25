@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private float movementSpeed = 3f;
 
-    [SerializeField] private float health, maxHealth = 3f;
+    public float health, maxHealth = 3f;
 
 
     // Start is called before the first frame update
