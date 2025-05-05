@@ -195,7 +195,7 @@ GameObject:
   - component: {fileID: 4118724626888960884}
   - component: {fileID: 1231735430887756293}
   m_Layer: 0
-  m_Name: MeleeEnemy
+  m_Name: '[Hard]MeleeEnemy'
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -230,10 +230,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e2f74ee57c5ec347a906702a5febafa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 6
+  moveSpeed: 7
   CoinsGiven: 2
   health: 0
-  maxHealth: 5
+  maxHealth: 8
 --- !u!114 &-2042506928999189662
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -395,7 +395,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 95ae2ed0d4ff64b4c899425983ceb35b, type: 3}
-  m_Color: {r: 0.6981132, g: 0.13779467, b: 0.10208259, a: 1}
+  m_Color: {r: 0.6301154, g: 0.10196076, b: 0.69803923, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
