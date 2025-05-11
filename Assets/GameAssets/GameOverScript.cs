@@ -2,29 +2,35 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 
 public class GameOverScript : MonoBehaviour
 {
     int scene = 0;
+    
     private void Start()
     {
-        if (SceneManager.GetActiveScene().buildIndex == SceneManager.GetActiveScene().buildIndex + 1)
+        string currentScene = SceneManager.GetActiveScene().name;
+
+        if (currentScene == "EasyGame")
         {
-            scene += 1;
+            scene = 1;
         }
-        else if (SceneManager.GetActiveScene().buildIndex == SceneManager.GetActiveScene().buildIndex + 2)
+        else if (currentScene == "HardGame")
         {
-            scene += 2;
+            scene = 2;
         }
     }
 
     public void Retry()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + scene);
+        SceneManager.LoadScene(scene);
+        UIScript.Coins = 0;
     }
 
     public void Menu()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene(0);
+        UIScript.Coins = 0;
     }
 }

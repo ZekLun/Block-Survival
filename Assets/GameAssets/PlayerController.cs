@@ -8,9 +8,9 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 movementDirection;
     Vector2 mousePosition;
-    GameObject gameover;
 
     [SerializeField] private float movementSpeed = 3f;
+    [SerializeField] private GameObject gameover;
 
     public float health, maxHealth = 3f;
 
@@ -18,7 +18,10 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gameover = GameObject.Find("GameOver");
+        if (gameover == null)
+        {
+            Debug.Log("GameOver not found");
+        }
         rb = GetComponent<Rigidbody2D>();
         health = maxHealth;
     }
@@ -45,8 +48,8 @@ public class PlayerController : MonoBehaviour
         if (health <= 0)
         {
             health = 0;
-            Destroy(gameObject);
             gameover.SetActive(true);
+            Destroy(gameObject);
         }
     }
 }

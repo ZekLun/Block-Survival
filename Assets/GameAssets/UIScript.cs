@@ -9,11 +9,6 @@ public class UIScript : MonoBehaviour
     static public float Coins = 0f;
     public TextMeshProUGUI CoinText;
 
-    private void Start()
-    {
-
-    }
-
     private void Update()
     {
         CoinText.text = Coins.ToString();
