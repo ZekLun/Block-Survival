@@ -5,7 +5,6 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
-using static UnityEditor.Timeline.TimelinePlaybackControls;
 
 public class HealthBarScript : MonoBehaviour
 {

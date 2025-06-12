@@ -8,7 +8,7 @@ public class EnemyController : MonoBehaviour
     Rigidbody2D rb;
     Transform target;
     Vector2 moveDirection;
-    public float CoinsGiven;
+    public int CoinsGiven;
 
     [SerializeField] private float health, maxHealth = 3f;
     void Start()
