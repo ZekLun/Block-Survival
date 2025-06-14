@@ -46,6 +46,16 @@ public class EnemyController : MonoBehaviour
         {
             UIScript.Coins += CoinsGiven;
             Destroy(gameObject);
+            OnDestroy();
         }
+    }
+
+    void OnDestroy()
+    {
+        if (GameObject.FindGameObjectWithTag("WaveSpawner") != null)
+        {
+            GameObject.FindGameObjectWithTag("WaveSpawner").GetComponent<WaveSpawner>().spawnedEnemies.Remove(gameObject);
+        }
+
     }
 }

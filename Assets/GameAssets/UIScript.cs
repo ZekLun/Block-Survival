@@ -8,27 +8,13 @@ using UnityEngine.SceneManagement;
 public class UIScript : MonoBehaviour
 {
     static public int Coins = 0;
-    static public int HighScore = 0;
     public TextMeshProUGUI CoinText;
-    public TextMeshProUGUI HighScoreText;
     public GameObject PauseScreen;
     private bool menuActive = false;
 
-
-    private void Start()
-    {
-        HighScore = PlayerPrefs.GetInt("HighScore", 0);
-        HighScoreText.text = "Highscore: " + HighScore.ToString();
-    }
     private void Update()
     {
-        CoinText.text = Coins.ToString();
-        if (Coins >= HighScore)
-        {
-            HighScoreText.text = "Highscore: " + HighScore.ToString();
-            HighScore = Coins;
-            PlayerPrefs.SetInt("HighScore", Coins);
-        }
+        CoinText.text = "Kubix: " + Coins.ToString();
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -41,6 +27,8 @@ public class UIScript : MonoBehaviour
     public void Menu()
     {
         SceneManager.LoadScene(0);
+        Time.timeScale = 1;
+        menuActive = false;
     }
 
     public void Continue()
