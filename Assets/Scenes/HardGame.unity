@@ -840,6 +840,7 @@ RectTransform:
   - {fileID: 1778809027}
   - {fileID: 1807004769}
   - {fileID: 1829720298}
+  - {fileID: 472875477}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -860,6 +861,41 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highscoreText: {fileID: 253063084}
+--- !u!1 &472875476
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 472875477}
+  m_Layer: 5
+  m_Name: StoreScreen
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &472875477
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 472875476}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 315415210}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &489486332
 GameObject:
   m_ObjectHideFlags: 0
@@ -1634,7 +1670,7 @@ MonoBehaviour:
   - enemyPrefab: {fileID: 3232145724025373560, guid: e7eb5ce87b1705f418251b71c64ff4d3, type: 3}
     cost: 4
   - enemyPrefab: {fileID: 3232145724025373560, guid: b053bac390cda3f4492696637b4d0581, type: 3}
-    cost: 2
+    cost: 3
   - enemyPrefab: {fileID: 3232145724025373560, guid: 677193639a0b4694e9ae8f266703e796, type: 3}
     cost: 2
   - enemyPrefab: {fileID: 3232145724025373560, guid: adb14980c7075a441bc787effb6f5f92, type: 3}
@@ -1928,7 +1964,6 @@ MonoBehaviour:
   arrowPrefab: {fileID: 4618627241845557555, guid: 0859ae8996763ec49ab93bba0dac283a, type: 3}
   firePoint: {fileID: 1712281097}
   fireForce: 20
-  shootTimer: 0.5
   shootCooldown: 1
   time: 2
 --- !u!1 &1310830510
