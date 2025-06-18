@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class WaveSpawner : MonoBehaviour
 {
-    public List<Enemy> enemies = new List<Enemy>();
+    public List<Enemy> enemies = new();
     public int currentWave;
     public int waveValue;
-    public List<GameObject> enemiesToSpawn = new List<GameObject>();
+    public List<GameObject> enemiesToSpawn = new();
 
     public Transform[] spawnLocations;
     public int spawnIndex;
@@ -18,7 +18,7 @@ public class WaveSpawner : MonoBehaviour
     private float spawnInterval;
     private float spawnTimer;
 
-    public List<GameObject> spawnedEnemies = new List<GameObject>();
+    public List<GameObject> spawnedEnemies = new();
     // Start is called before the first frame update
     void Start()
     {
@@ -69,14 +69,20 @@ public class WaveSpawner : MonoBehaviour
     {
         waveValue = currentWave * 5;
         GenerateEnemies();
-
-        spawnInterval = waveDuration / enemiesToSpawn.Count;
+        if (currentWave >= 4)
+        {
+            spawnInterval = waveDuration / enemiesToSpawn.Count + 1;
+        }
+        else
+        {
+            spawnInterval = waveDuration / enemiesToSpawn.Count;
+        }
         waveTimer = waveDuration;
     }
 
     public void GenerateEnemies()
     {
-        List<GameObject> generatedEnemies = new List<GameObject>();
+        List<GameObject> generatedEnemies = new();
         while(waveValue > 0)
         {
             int randEnemyId = Random.Range(0, enemies.Count);

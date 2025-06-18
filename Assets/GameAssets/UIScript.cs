@@ -8,13 +8,24 @@ using UnityEngine.SceneManagement;
 public class UIScript : MonoBehaviour
 {
     static public int Coins = 0;
+
     public TextMeshProUGUI CoinText;
     public GameObject PauseScreen;
+    public TextMeshProUGUI WaveText;
+    private WaveSpawner waveSpawner;
+
+
     private bool menuActive = false;
 
+
+    private void Start()
+    {
+        waveSpawner = FindAnyObjectByType<WaveSpawner>();
+    }
     private void Update()
     {
         CoinText.text = "Kubix: " + Coins.ToString();
+        WaveText.text = "Wave: " + waveSpawner.currentWave.ToString();
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {

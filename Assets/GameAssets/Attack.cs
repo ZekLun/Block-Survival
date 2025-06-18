@@ -7,8 +7,8 @@ public class Attack : MonoBehaviour
     [SerializeField] private GameObject arrowPrefab;
     [SerializeField] private Transform firePoint;
     [SerializeField] private float fireForce = 20f;
-    [SerializeField] private float shootTimer = 0.5f;
-    [SerializeField] private float shootCooldown = 0.25f;
+    private float shootTimer = 0;
+    public float shootCooldown = 1f;
     [SerializeField] private float time = 1f;
     private bool autoFire = false;
     void Update()

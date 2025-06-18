@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
@@ -7,10 +9,17 @@ using UnityEngine.UIElements;
 public class GameOverScript : MonoBehaviour
 {
     int scene = 0;
+    public TextMeshProUGUI highscoreText;
+    private int highscore;
+    private WaveSpawner wavespawner;
+
     
     private void Start()
     {
         string currentScene = SceneManager.GetActiveScene().name;
+        wavespawner = FindAnyObjectByType<WaveSpawner>();
+        highscore = PlayerPrefs.GetInt("highscore", 0);
+
 
         if (currentScene == "EasyGame")
         {
@@ -20,6 +29,16 @@ public class GameOverScript : MonoBehaviour
         {
             scene = 2;
         }
+    }
+    private void Update()
+    {
+        if (wavespawner.currentWave > highscore)
+        {
+            highscore = wavespawner.currentWave;
+            PlayerPrefs.SetInt("highscore", highscore);
+            Debug.Log("Highscore changed");
+        }
+        highscoreText.text = "Highscore: " + highscore.ToString();
     }
 
     public void Retry()

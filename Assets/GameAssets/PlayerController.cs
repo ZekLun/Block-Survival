@@ -9,10 +9,9 @@ public class PlayerController : MonoBehaviour
     private Vector2 movementDirection;
     Vector2 mousePosition;
 
-    [SerializeField] private float movementSpeed = 3f;
     [SerializeField] private GameObject gameover;
 
-    public float health, maxHealth = 3f;
+    public float health, maxHealth, movementSpeed = 3f;
 
 
     // Start is called before the first frame update
