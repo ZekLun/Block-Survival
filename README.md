@@ -1,4 +1,4 @@
-# Blocks Survival
+# Block Survival
 
 A 2D survival game built in Unity where the player fights off increasingly 
 difficult enemy waves. Built solo over 6 weeks as a final school project.
